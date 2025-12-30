@@ -73,10 +73,12 @@ fastify.register(productRoutes, { prefix: "/products" });
 /**
  * Start server
  */
-fastify.listen({ port: 5000 }, (err) => {
+const port = process.env.PORT || 5000;
+
+fastify.listen({ port, host: "0.0.0.0" }, (err) => {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
   }
-  console.log("Backend running on http://localhost:5000");
+  console.log(`Backend running on port ${port}`);
 });
