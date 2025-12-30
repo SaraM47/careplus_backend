@@ -23,7 +23,7 @@ model Category {
 }
 
 model Product {
-  id          Int       @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   name        String
   description String
   price       Float
@@ -31,5 +31,5 @@ model Product {
   form        String
   imagePath   String?
   categoryId  Int
-  category    Category  @relation(fields: [categoryId], references: [id])
+  category    Category @relation(fields: [categoryId], references: [id])
 }
