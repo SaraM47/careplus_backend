@@ -10,6 +10,8 @@ The API handles user authentication, role-based access control, product and cate
 
 ## Project repository
 
+Backend application: CarePlus Backend (Render) [here](https://careplus-backend-6a90.onrender.com/).
+
 Frontend repository: CarePlus Frontend (Vue SPA) [here]().
 
 Frontend application: Runs as a Vue Single Page Application consuming this API [here]().
