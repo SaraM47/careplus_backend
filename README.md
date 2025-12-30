@@ -87,7 +87,7 @@ Product images are stored externally using Cloudinary, and only the image URL is
 Authentication is handled using JWT (JSON Web Tokens).
 
 Protected routes require a valid token passed via:
-```json
+```
 Authorization: Bearer <token>
 ```
 Role-based access control is enforced at route level.
@@ -139,7 +139,7 @@ or
 
 ## Search, filter & pagination
 The product endpoint supports advanced querying via query parameters for example:
-```json
+```
 /products?page=1&limit=10
 /products?q=vitamin
 /products?categoryId=3
@@ -181,14 +181,14 @@ The API distinguishes between two user roles:
 
 The API was tested using Postman, but it can be tested similar REST clients.
 When calling protected routes, include a valid JWT token in the Authorization header:
-```json
+```
 Authorization: Bearer <token>
 ```
 ---
 
 ## Getting started (local setup)
 1. Clone the repository
-```json
+```
 git clone https://github.com/<your-username>/careplus_backend.git
 cd careplus_backend
 ```
@@ -200,13 +200,13 @@ npm install
 
 3. Environment variables
 Create a .env file in the project root and add the following environment variables:
-`
+```
 DATABASE_URL=postgresql://username:password@localhost:5432/careplus_db
 JWT_SECRET=your_jwt_secret_here
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
-`
+```
 
 These variables are required for:
 - Database connection (PostgreSQL)
@@ -215,15 +215,15 @@ These variables are required for:
 
 4. Database setup
 Run Prisma migrations to create the database tables:
-`
+```
 npx prisma migrate dev
-`
+```
 
 5. Start the server
-`
+```
 npm start
-`
+```
 The API will now be running at:
-`
+```
 http://localhost:5000
-`
+```
