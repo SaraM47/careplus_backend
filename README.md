@@ -121,17 +121,20 @@ Role-based access control is enforced at route level.
 | PATCH  | /products/:id/stock | delta or stock | Yes (admin, staff) | Updates product stock level |
 
 Example request body:
+
 ```json
 {
   "delta": -5
 }
 ```
+
 or
 ```json
 {
   "stock": 100
 }
 ```
+
 ----
 
 ## Search, filter & pagination
@@ -145,6 +148,7 @@ The product endpoint supports advanced querying via query parameters for example
 /products?minPrice=50&maxPrice=200
 /products?sort=price&order=asc
 ```
+
 All filters can be combined, and pagination metadata is returned with every response.
 
 ## Image upload
@@ -215,11 +219,15 @@ npx prisma migrate dev
 ```
 
 5. Start the server
+
 ```json
 npm start
 ```
 
 The API will now be running at:
+
 ```json
 http://localhost:5000
 ```
+
+----
