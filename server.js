@@ -61,6 +61,17 @@ fastify.decorate("auth", async (req, reply) => {
   });  
 
 /**
+ * Root route is used by browser / Render to confirm API is running
+ */
+fastify.get("/", async () => {
+  return {
+    status: "ok",
+    service: "CarePlus API",
+    environment: process.env.NODE_ENV || "development",
+  };
+});
+
+/**
  * Routes
  * /auth for authentication login and registration (public)
  * /categories for cateqgory management (protected)
