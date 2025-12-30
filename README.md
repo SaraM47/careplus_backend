@@ -194,19 +194,20 @@ cd careplus_backend
 ```
 
 2. Install dependencies
-```json
+```
 npm install
 ```
 
 3. Environment variables
 Create a .env file in the project root and add the following environment variables:
-```json
+`
 DATABASE_URL=postgresql://username:password@localhost:5432/careplus_db
 JWT_SECRET=your_jwt_secret_here
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
-```
+`
+
 These variables are required for:
 - Database connection (PostgreSQL)
 - JWT authentication
@@ -214,20 +215,15 @@ These variables are required for:
 
 4. Database setup
 Run Prisma migrations to create the database tables:
-```json
+`
 npx prisma migrate dev
-```
+`
 
 5. Start the server
-
-```json
+`
 npm start
-```
-
+`
 The API will now be running at:
-
-```json
+`
 http://localhost:5000
-```
-
-----
+`
