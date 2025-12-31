@@ -26,7 +26,6 @@
     "@fastify/jwt": "^10.0.0",
     "@fastify/multipart": "^9.3.0",
     "@fastify/static": "^9.0.0",
-    "@nestjs/config": "^4.0.2",
     "@prisma/client": "^6.19.1",
     "bcrypt": "^6.0.0",
     "cloudinary": "^2.8.0",
