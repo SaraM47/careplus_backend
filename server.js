@@ -28,6 +28,7 @@ fastify.get("/", async () => {
  */
 fastify.register(cors, {
   origin: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 });
 
 /**
