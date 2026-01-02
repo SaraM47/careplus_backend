@@ -7,7 +7,20 @@ const productRoutes = require("./routes/product.route");
 const categoryRoutes = require("./routes/category.route");
 const authRoutes = require("./routes/auth.route");
 
-const fastify = Fastify({ logger: true });
+const fastify = Fastify({
+  logger: process.env.NODE_ENV !== "production",
+});
+
+/**
+ * Root route is used by browser / Render to confirm API is running
+ */
+fastify.get("/", async () => {
+  return {
+    status: "ok",
+    service: "CarePlus API",
+    environment: process.env.NODE_ENV || "development",
+  };
+});
 
 /**
  * CORS
@@ -61,17 +74,6 @@ fastify.decorate("auth", async (req, reply) => {
   });  
 
 /**
- * Root route is used by browser / Render to confirm API is running
- */
-fastify.get("/", async () => {
-  return {
-    status: "ok",
-    service: "CarePlus API",
-    environment: process.env.NODE_ENV || "development",
-  };
-});
-
-/**
  * Routes
  * /auth for authentication login and registration (public)
  * /categories for cateqgory management (protected)
@@ -91,5 +93,7 @@ fastify.listen({ port, host: "0.0.0.0" }, (err) => {
     fastify.log.error(err);
     process.exit(1);
   }
+
+  console.log("Fastify listening, ready to accept requests");
   console.log(`Backend running on port ${port}`);
 });
