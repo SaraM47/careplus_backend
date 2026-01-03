@@ -32,5 +32,6 @@ model Product {
   imagePath   String?
   categoryId  Int
   category    Category @relation(fields: [categoryId], references: [id])
+  
   createdAt   DateTime @default(now())
 }
