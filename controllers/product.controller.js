@@ -65,11 +65,31 @@ async function getProducts(req, reply) {
     if (maxPrice !== undefined) where.price.lte = maxPrice;
   }
 
+  // Sorting the results
+  const sort = req.query.sort || "createdAt_desc";
+
+  const sortMap = {
+    name_asc: { name: "asc" },
+    name_desc: { name: "desc" },
+
+    createdAt_asc: { createdAt: "asc" },
+    createdAt_desc: { createdAt: "desc" },
+
+    price_asc: { price: "asc" },
+    price_desc: { price: "desc" },
+
+    stock_asc: { stock: "asc" },
+    stock_desc: { stock: "desc" },
+  };
+
+  const orderBy = sortMap[sort] || sortMap.createdAt_desc;
+
   // Fetch products with pagination and filters
   const products = await prisma.product.findMany({
     where,
     skip,
     take: limit,
+    orderBy,
     include: { category: true },
   });
 
