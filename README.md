@@ -1,5 +1,5 @@
-# CarePlus – REST API (Warehouse management system)
-This is a RESTful API built using Node.js, Fastify, PostgreSQL, and Prisma.
+# CarePlus – REST API (Inventory management system)
+This is a RESTful API built using Fastify, PostgreSQL, and Prisma.
 The API serves as the backend for the CarePlus inventory management system, a fictional pharmacy handling non-prescription medicines and healthcare products.
 
 This document provides a detailed explanation of all available API endpoints, including request methods, routes, authentication requirements, request bodies, and descriptions of each endpoint’s responsibility.
@@ -12,7 +12,7 @@ The API handles user authentication, role-based access control, product and cate
 
 Backend application: CarePlus Backend (Render) [here](https://careplus-backend-6a90.onrender.com/).
 
-Frontend repository: CarePlus Frontend (Vue SPA) [here]().
+Frontend repository: CarePlus Frontend (Vue SPA) [here](https://github.com/SaraM47/careplus-frontend).
 
 Frontend application: Runs as a Vue Single Page Application consuming this API [here]().
 
